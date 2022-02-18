@@ -3,20 +3,22 @@ package com.example.animes_app_arnau;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class UserActivity extends AppCompatActivity {
+public class FavoritesActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private RecyclerView recyclerView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_favorites);
         hook();
 
         setSupportActionBar(toolbar);
@@ -46,5 +48,6 @@ public class UserActivity extends AppCompatActivity {
 
     private void hook() {
         toolbar = findViewById(R.id.toolbar);
+        recyclerView2 = findViewById(R.id.recyclerView2);
     }
 }

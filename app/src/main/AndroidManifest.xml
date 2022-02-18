@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Animes_app_arnau">
         <activity
+            android:name=".FavoritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity
