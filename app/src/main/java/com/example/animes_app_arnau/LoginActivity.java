@@ -19,9 +19,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         hook();
 
-        //TODO: onClickListener btLogin2
+        //TODO: onClickListener btLogin2 --> LOGIN USER
 
-        //TODO: onCLickListener btSignUp2
+        //TODO: onCLickListener btSignUp2 --> VIEW activity_signup
 
     }
 

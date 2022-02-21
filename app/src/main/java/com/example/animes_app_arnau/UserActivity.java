@@ -8,10 +8,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class UserActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+
+    private EditText nameEditText;
+    private EditText emailEditText;
+    private EditText passEditText;
+    private EditText phoneEditText;
+    private Button btUpdate;
+    private Button btDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +30,10 @@ public class UserActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //TODO: UPDATE USER
+
+        //TODO: DELETE USER
     }
 
     @Override
@@ -46,5 +59,12 @@ public class UserActivity extends AppCompatActivity {
 
     private void hook() {
         toolbar = findViewById(R.id.toolbar);
+
+        nameEditText = findViewById(R.id.nameEditText);
+        emailEditText = findViewById(R.id.emailEditText);
+        passEditText = findViewById(R.id.passEditText);
+        phoneEditText = findViewById(R.id.phoneEditText);
+        btUpdate = findViewById(R.id.btUpdate);
+        btDelete = findViewById(R.id.btDelete);
     }
 }

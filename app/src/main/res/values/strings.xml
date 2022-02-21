@@ -16,4 +16,11 @@
 
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
+
+    <string name="name_u">Name:</string>
+    <string name="email_u">Email:</string>
+    <string name="password_u">Password:</string>
+    <string name="phone_u">Phone:</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

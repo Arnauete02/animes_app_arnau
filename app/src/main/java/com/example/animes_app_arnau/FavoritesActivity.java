@@ -23,6 +23,12 @@ public class FavoritesActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //TODO: LIST FAVORITES
+
+        //TODO: INSERT FAVORITES
+
+        //TODO: DELETE FAVORITES
     }
 
     @Override
