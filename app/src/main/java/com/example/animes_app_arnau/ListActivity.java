@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,9 +34,6 @@ public class ListActivity extends AppCompatActivity {
 
     List animes = new ArrayList<>();
     MyAdapter myAdapter;
-
-    //TODO: retocar URL
-    private static String LIST_ANIMES_URL = "https://joanseculi.com/edt69/animes2.php?email=admin2@email.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +77,7 @@ public class ListActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
-                LIST_ANIMES_URL,
+                url(),
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -100,9 +98,9 @@ public class ListActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         myAdapter = new MyAdapter(getApplicationContext(), animes);
                         recyclerView.setAdapter(myAdapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
                 },
                 new Response.ErrorListener() {
@@ -113,5 +111,11 @@ public class ListActivity extends AppCompatActivity {
                 }
         );
         queue.add(jsonObjectRequest);
+    }
+
+    private String url() {
+        String email = getIntent().getStringExtra(LoginActivity.EXTRA_TEXT_EMAIL);
+        String url = "https://joanseculi.com/edt69/animes2.php?email"+ email;
+        return url;
     }
 }

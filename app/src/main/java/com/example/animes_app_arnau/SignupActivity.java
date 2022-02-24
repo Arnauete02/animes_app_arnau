@@ -46,7 +46,6 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         hook();
 
-        //TODO: onClickListener btLogin1 --> VIEW activity_login
         btLogin1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +53,7 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //TODO: onCLickListener btSignUp1 --> CREATE USER
+
         btSignUp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,11 +63,11 @@ public class SignupActivity extends AppCompatActivity {
                 } else if (nameText.getText().toString().isEmpty()) {
                     nameText.setError("Required");
                 } else if (emailText.getText().toString().isEmpty()) {
-                    nameText.setError("Required");
+                    emailText.setError("Required");
                 } else if (passText.getText().toString().isEmpty()) {
-                    nameText.setError("Required");
+                    passText.setError("Required");
                 } else if (phoneText.getText().toString().isEmpty()) {
-                    nameText.setError("Required");
+                    phoneText.setError("Required");
                 }
             }
         });
@@ -87,11 +86,12 @@ public class SignupActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT);
-                        if (response.equals("User created")){
-                            Intent intent = new Intent(getApplicationContext(), ListActivity.class);
+                        if (response.equals("User created")) {
+                            Log.d("tag", response);
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
                         } else {
+                            Log.d("tag", response);
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
                         }
@@ -100,7 +100,7 @@ public class SignupActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT);
+                        Log.d("error", error.getMessage());
                     }
                 }
         ){

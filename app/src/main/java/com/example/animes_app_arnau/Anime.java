@@ -9,16 +9,6 @@ public class Anime {
     private String image;
     private String favorite;
 
-    public Anime(int id, String name, String description, String type, int year, String image, String favorite) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.type = type;
-        this.year = year;
-        this.image = image;
-        this.favorite = favorite;
-    }
-
     public Anime(){
 
     }
