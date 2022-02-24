@@ -98,9 +98,9 @@ public class ListActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         myAdapter = new MyAdapter(getApplicationContext(), animes);
                         recyclerView.setAdapter(myAdapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
                 },
                 new Response.ErrorListener() {

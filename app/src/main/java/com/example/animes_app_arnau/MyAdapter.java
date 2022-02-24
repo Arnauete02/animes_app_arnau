@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(mAnimes.get(position).getName());
         holder.description.setText(mAnimes.get(position).getDescription());
-        //holder.year.setText(mAnimes.get(position).getYear());
+        holder.year.setText(mAnimes.get(position).getYear());
         holder.type.setText(mAnimes.get(position).getType());
 
         Picasso.get().load(mAnimes.get(position).getImage())
