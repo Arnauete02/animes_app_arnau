@@ -17,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -84,7 +85,7 @@ public class ListActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray animesArray = response.getJSONArray("animes");
-                            for (int i = 0; i < response.length(); i++){
+                            for (int i = 0; i < response.getJSONArray("animes").length(); i++){
                                 JSONObject jsonObject = animesArray.getJSONObject(i);
                                 Anime anime = new Anime();
                                 anime.setName(jsonObject.getString("name"));
@@ -98,9 +99,9 @@ public class ListActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         myAdapter = new MyAdapter(getApplicationContext(), animes);
                         recyclerView.setAdapter(myAdapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     }
                 },
                 new Response.ErrorListener() {
@@ -115,7 +116,7 @@ public class ListActivity extends AppCompatActivity {
 
     private String url() {
         String email = getIntent().getStringExtra(LoginActivity.EXTRA_TEXT_EMAIL);
-        String url = "https://joanseculi.com/edt69/animes2.php?email"+ email;
+        String url = "https://joanseculi.com/edt69/animes2.php?email="+ email;
         return url;
     }
 }
