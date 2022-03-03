@@ -65,8 +65,8 @@
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_marginTop="4dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="@+id/type"
         app:layout_constraintTop_toBottomOf="@+id/type"
-        app:srcCompat="@drawable/ic_like"
-        app:tint="#D66868" />
+        app:srcCompat="@drawable/like" />
 </androidx.constraintlayout.widget.ConstraintLayout>

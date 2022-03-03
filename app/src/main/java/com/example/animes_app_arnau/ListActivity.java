@@ -32,6 +32,7 @@ public class ListActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private RecyclerView recyclerView;
+    private Intent intent;
 
     List animes = new ArrayList<>();
     MyAdapter myAdapter;
@@ -58,10 +59,16 @@ public class ListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu:
+                intent = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.profile:
+                intent = new Intent(getApplicationContext(), UserActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.like:
+                intent = new Intent(getApplicationContext(), FavoritesActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
