@@ -43,7 +43,6 @@ public class ListActivity extends AppCompatActivity {
         hook();
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getAnimes();
     }

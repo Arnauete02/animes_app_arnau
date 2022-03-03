@@ -22,7 +22,6 @@ public class FavoritesActivity extends AppCompatActivity {
         hook();
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //TODO: LIST FAVORITES
 

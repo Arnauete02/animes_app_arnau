@@ -58,7 +58,7 @@ public class Anime {
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.image = "https://joanseculi.com/" + image;
     }
 
     public String getFavorite() {

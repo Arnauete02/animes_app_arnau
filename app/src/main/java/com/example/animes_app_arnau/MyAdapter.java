@@ -44,6 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 .fit()
                 .centerCrop()
                 .into(holder.image);
+
         Picasso.get().load(mAnimes.get(position).getFavorite())
                 .fit()
                 .centerCrop()
